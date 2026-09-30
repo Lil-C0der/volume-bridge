@@ -1,4 +1,4 @@
-# VolumeBridge
+# VolumeBridge：macOS NTFS 读写工具
 
 原生 macOS 外接磁盘与 NTFS 读写管理工具，使用 SwiftUI、NTFS-3G 和 FUSE-T。支持简体中文、英文和日文，右上角齿轮菜单 →「语言…」可切换。
 

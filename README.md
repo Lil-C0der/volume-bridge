@@ -1,6 +1,6 @@
-# VolumeBridge
+# VolumeBridge: NTFS for Mac
 
-A native macOS utility for managing external NTFS drives, powered by NTFS-3G and FUSE-T. Built with SwiftUI. Supports English, Japanese and Simplified Chinese.
+A native NTFS for Mac utility to read and write NTFS drives on macOS, powered by NTFS-3G and FUSE-T. Built with SwiftUI. Supports English, Japanese and Simplified Chinese.
 
 [简体中文](README.zh-CN.md)
 
