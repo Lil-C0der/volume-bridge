@@ -1,0 +1,13 @@
+# Generated application bundles, archives and build artifacts
+*.app/
+*.zip
+.DS_Store
+__pycache__/
+*.pyc
+.build/
+# This machine's public certificate is retained locally for stable signing.
+Source/*-Local-Signing.cer
+*.p12
+*.pfx
+*.key
+.env
