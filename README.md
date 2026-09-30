@@ -6,7 +6,7 @@ A native NTFS for Mac utility to read and write NTFS drives on macOS, powered by
 
 ## Download and install
 
-[Download VolumeBridge for Apple Silicon](https://github.com/Lil-C0der/volume-bridge/releases/latest/download/VolumeBridge-0.2.1-arm64.dmg) · [Release notes and source](https://github.com/Lil-C0der/volume-bridge/releases)
+[Download VolumeBridge for Apple Silicon](https://github.com/Lil-C0der/volume-bridge/releases/download/v0.2.1/VolumeBridge-0.2.1-arm64.dmg) · [Release notes and source](https://github.com/Lil-C0der/volume-bridge/releases)
 
 Requires Apple Silicon and macOS 14 or later. Open the DMG and drag **VolumeBridge.app** to **Applications**. The NTFS driver and FUSE-T framework are included.
 

@@ -4,7 +4,7 @@
 
 ## 下载安装
 
-[下载 Apple Silicon 版 DMG](https://github.com/Lil-C0der/volume-bridge/releases/latest/download/VolumeBridge-0.2.1-arm64.dmg) · [版本说明与源码](https://github.com/Lil-C0der/volume-bridge/releases)
+[下载 Apple Silicon 版 DMG](https://github.com/Lil-C0der/volume-bridge/releases/download/v0.2.1/VolumeBridge-0.2.1-arm64.dmg) · [版本说明与源码](https://github.com/Lil-C0der/volume-bridge/releases)
 
 支持 Apple Silicon（M 系列芯片）与 macOS 14 或更高版本。打开 DMG，将 **VolumeBridge.app** 拖到 **Applications**，再从应用程序目录启动。驱动与框架已随应用打包。
 
