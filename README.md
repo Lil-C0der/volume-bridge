@@ -4,6 +4,16 @@ A native NTFS for Mac utility to read and write NTFS drives on macOS, powered by
 
 [简体中文](README.zh-CN.md)
 
+## Download and install
+
+[Download VolumeBridge for Apple Silicon](https://github.com/Lil-C0der/volume-bridge/releases/latest/download/VolumeBridge-0.2.1-arm64.dmg) · [Release notes and source](https://github.com/Lil-C0der/volume-bridge/releases)
+
+Requires Apple Silicon and macOS 14 or later. Open the DMG and drag **VolumeBridge.app** to **Applications**. The NTFS driver and FUSE-T framework are included.
+
+This initial release is an **unnotarized, ad-hoc-signed preview**. macOS may block its first launch. After reviewing the release, use **System Settings → Privacy & Security → Open Anyway** if offered. Keep system security protections enabled. Then grant **Full Disk Access** as described below.
+
+The bundled FUSE-T binary is licensed for non-commercial use; commercial use or bundling with commercial software requires a license from the FUSE-T authors. See `Licenses/FUSE-T.txt`.
+
 ## Features
 
 - Scan external physical disks and show format, mount mode and storage usage.
@@ -77,3 +87,13 @@ Generated `.app` bundles and local signing material are excluded from Git. Publi
 ## Third-party components
 
 NTFS-3G and FUSE-T retain their upstream licenses. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `Licenses/` for attribution and redistribution terms.
+
+## Package a release
+
+After building the app and committing your source changes:
+
+```sh
+python3 Source/package.py
+```
+
+This builds a separate preview application with the public Bundle ID, runs the simulated regression, localization and isolated image tests, and creates an arm64 DMG, source ZIP and SHA-256 checksums in `dist/`. The local application and its pinned signing identity are preserved. Apple Developer ID signing and notarization are future distribution steps.

@@ -11,3 +11,7 @@ Source/*-Local-Signing.cer
 *.pfx
 *.key
 .env
+
+# Release packaging
+*.dmg
+dist/

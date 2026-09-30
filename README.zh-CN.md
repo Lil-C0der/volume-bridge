@@ -2,6 +2,16 @@
 
 原生 macOS 外接磁盘与 NTFS 读写管理工具，使用 SwiftUI、NTFS-3G 和 FUSE-T。支持简体中文、英文和日文，右上角齿轮菜单 →「语言…」可切换。
 
+## 下载安装
+
+[下载 Apple Silicon 版 DMG](https://github.com/Lil-C0der/volume-bridge/releases/latest/download/VolumeBridge-0.2.1-arm64.dmg) · [版本说明与源码](https://github.com/Lil-C0der/volume-bridge/releases)
+
+支持 Apple Silicon（M 系列芯片）与 macOS 14 或更高版本。打开 DMG，将 **VolumeBridge.app** 拖到 **Applications**，再从应用程序目录启动。驱动与框架已随应用打包。
+
+当前发布为**临时签名、尚未完成 Apple 公证的预览版**。首次启动可能被 macOS 拦截；确认来源后，可在系统提供该选项时使用「系统设置 → 隐私与安全性 → 仍要打开」。保持系统安全保护启用，然后按下文授权完整磁盘访问。
+
+随附 FUSE-T 二进制允许非商业用途；商业使用或与商业软件捆绑需要获得其作者许可，详见 `Licenses/FUSE-T.txt`。
+
 ## 构建与使用
 
 需要 macOS 14 或更高版本及 Xcode Command Line Tools。已在 Apple Silicon 本机验证。
@@ -38,3 +48,7 @@ python3 Source/test_localization.py
 ## 发布到 GitHub
 
 仓库建议命名为 `volume-bridge`。提交源码、翻译、测试、构建脚本及第三方许可证；编译后的应用通过 GitHub Releases 单独发布。第三方组件保留其上游许可证，见 `THIRD_PARTY_NOTICES.md` 与 `Licenses/`。
+
+## 制作发布包
+
+完成构建并提交源码后，运行 `python3 Source/package.py`。脚本在独立目录构建公开预览版，执行回归、语言和独立镜像读写测试，生成 DMG、完整源码 ZIP 和 SHA-256 校验文件。本机应用的签名身份保持原样。
