@@ -79,9 +79,21 @@ if not args.ui_only:
         shutil.copy2(src / 'ntfsprogs/mkntfs', contents / 'Resources/driver/sbin/mkntfs')
 
 run(['swiftc', '-parse-as-library', '-O', source / 'VolumeBridge.swift', '-o', contents / 'MacOS/VolumeBridge'])
+# Generate all standard and Retina representations from the selected artwork.
+with tempfile.TemporaryDirectory(prefix='VolumeBridge-icon-') as icon_temp:
+    iconset = Path(icon_temp) / 'VolumeBridge.iconset'
+    iconset.mkdir()
+    for size in [16, 32, 128, 256, 512]:
+        for scale in [1, 2]:
+            suffix = '@2x' if scale == 2 else ''
+            run(['sips', '-z', size * scale, size * scale,
+                 source / 'Assets/VolumeBridge.png', '--out',
+                 iconset / f'icon_{size}x{size}{suffix}.png'])
+    run(['iconutil', '-c', 'icns', iconset, '-o', contents / 'Resources/VolumeBridge.icns'])
 metadata = {'CFBundleExecutable': 'VolumeBridge', 'CFBundleIdentifier': bundle_id,
+            'CFBundleIconFile': 'VolumeBridge.icns',
             'CFBundleName': 'VolumeBridge', 'CFBundleDisplayName': 'VolumeBridge', 'CFBundlePackageType': 'APPL',
-            'CFBundleShortVersionString': '0.2.1', 'CFBundleVersion': '11', 'LSMinimumSystemVersion': '14.0',
+            'CFBundleShortVersionString': '0.2.2', 'CFBundleVersion': '12', 'LSMinimumSystemVersion': '14.0',
             'CFBundleDevelopmentRegion': 'en', 'CFBundleLocalizations': ['zh-Hans', 'en', 'ja'],
             'NSRemovableVolumesUsageDescription': '读取和挂载你选择的外接 NTFS 磁盘。',
             'NSHighResolutionCapable': True, 'NSPrincipalClass': 'NSApplication'}
